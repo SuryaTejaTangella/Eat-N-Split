@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# 🍽️ Eat-N-Split (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and interactive **bill-splitting application** built using React.
+This app allows users to split expenses with friends and keep track of balances in a clean and intuitive way.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Overview
 
-### `npm start`
+Eat-N-Split helps users manage shared expenses by:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Adding friends
+- Selecting a friend to split a bill
+- Calculating who owes whom
+- Updating balances dynamically
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project focuses on **core React concepts like lifting state up, props-based communication, and controlled components**.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
 
-### `npm run build`
+- 👥 Add new friends
+- 💸 Split bills with selected friend
+- 🔄 Automatically calculate balances
+- 📊 Track who owes money
+- ⚡ Instant UI updates
+- 🎯 Simple and user-friendly interface
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧠 Key Concepts Implemented
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔹 Lifting State Up
 
-### `npm run eject`
+- Centralized state in the parent component
+- Shared data across multiple child components
+- Controlled which friend is selected and updated balances globally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔹 Props & Data Flow
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Passed **data (friend list, balances)** from parent → child
+- Passed **functions (handlers)** to allow child → parent updates
+- Maintained unidirectional data flow
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 🔹 Controlled Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Managed form inputs (bill value, user expense) via state
+- Ensured UI stays in sync with data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🔄 Data Flow (How It Works)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```id="flow-eat"
+User Action (Child Component)
+        ↓
+Calls Handler Function (via props)
+        ↓
+Parent State Updates
+        ↓
+Updated Data Passed Back as Props
+        ↓
+UI Re-renders Automatically
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧩 Component Structure
 
-### Making a Progressive Web App
+```id="structure-eat"
+App (State Owner)
+│
+├── FriendList
+│   └── Friend
+│
+├── FormAddFriend
+│
+└── FormSplitBill
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+👉 The **App component acts as the single source of truth**, managing:
 
-### Advanced Configuration
+- Friends list
+- Selected friend
+- Balances
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## ⚙️ How It Works (Logic)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- User selects a friend
+- Enters bill amount and expenses
+- App calculates:
+  - Who paid more
+  - Who owes money
 
-### `npm run build` fails to minify
+- Updates the balance accordingly
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🛠️ Tech Stack
+
+- **React** (Functional Components + Hooks)
+- **JavaScript (ES6+)**
+- **CSS**
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+
+```bash id="clone-eat"
+git clone https://github.com/SuryaTejaTangella/Eat-N-Split.git
+```
+
+2. Navigate to the project:
+
+```bash id="cd-eat"
+cd Eat-N-Split
+```
+
+3. Install dependencies:
+
+```bash id="install-eat"
+npm install
+```
+
+4. Run the app:
+
+```bash id="run-eat"
+npm start
+```
+
+---
+
+## 🚀 Future Enhancements
+
+- 💾 Persist data using local storage
+- 📱 Improve mobile responsiveness
+- 🔍 Add search/filter for friends
+- 📊 Expense history tracking
+
+---
+
+## 👨‍💻 Author
+
+**Surya Teja Tangella**
+Aspiring Software Developer | Java Backend + React
+Transitioning from Banking → IT / FinTech
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
