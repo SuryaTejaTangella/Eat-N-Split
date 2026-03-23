@@ -3,6 +3,10 @@
 A simple and interactive **bill-splitting application** built using React.
 This app allows users to split expenses with friends and keep track of balances in a clean and intuitive way.
 
+## 🔗 Live Demo - [eat-n-split-xi-three.vercel.app](https://eat-n-split-xi-three.vercel.app/)
+
+![alt text](image.png)
+
 ---
 
 ## 📌 Overview
